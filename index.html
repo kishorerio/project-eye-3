@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body id="colo">  
+    <button onclick="toggle()">Toggle</button> 
+    <button onclick="start()">START</button>
+    <button onclick="stop()">STOP</button>
+    
+    <script>
+        function toggle() {
+            const element = document.getElementById('colo');
+            element.classList.toggle('on');
+        }
+
+        let timer = null;
+        function start() {
+            timer = setTimeout(() => {
+                toggle();
+                start();
+
+            },100);
+        }
+        function stop() {
+            clearTimeout(timer);
+        }
+    </script>
+    <div id="background-wrap">
+        <div class="x1">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x2">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x3">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x4">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x5">
+            <div class="cloud"></div>
+        </div>
+    </div>
+    
+    <img src="./face1.png" style="position: absolute; left: 400px; height: 750px;" >
+    <div class="eyes">
+        <div class="eye">
+            <div class="ball"></div>
+        </div>
+        
+        <div class="eye">
+            <div class="ball"></div>
+</div>
+</div>
+</body>
+<script src="./eyes.js"></script>
+
+</html>
